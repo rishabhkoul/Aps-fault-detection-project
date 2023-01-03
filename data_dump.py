@@ -14,6 +14,5 @@ if __name__ == "__main__":
     df.reset_index(drop = True, inplace=True)
     json_data = list(json.loads(df.T.to_json()).values())
 
-    #print(json_data[0])
-
+    #print(json_data[0])git
     client[database_name][collection_name].insert_many(json_data)
