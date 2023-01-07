@@ -1,6 +1,9 @@
-from typing import List
-x = "checking the function List and what it does"
+from sensor.exception import SensorException
+import sys
+import sensor.logger
 
-def get_requirements()->List[str]:
-    with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        requirement_list = requirement_file.readlines()
+
+try:
+    print(2/0)
+except Exception as e:
+    print(SensorException(e, sys))
